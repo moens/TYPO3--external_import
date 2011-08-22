@@ -4,4 +4,8 @@
 
 This is a variant of the [http://forge.typo3.org/projects/show/extension-external_import external_import extension] by [http://forge.typo3.org/users/329 Francois Suter]. This version will work fine with all the other svconnector plugins, it just provides a hook that allows the use of an alternate handleArray function.
 
+In this github repo I have the original ext mirrored as the master branch, and the necessary changes are found in the "socialVariant" branch. To get it use the following git command:
+
+git clone -b socialVariant git://github.com/moens/TYPO3--external_import.git
+
 You MUST use this version ("socialVariant" branch) if you wish to use the svconnector_social extension!
