@@ -230,7 +230,7 @@ class tx_externalimport_importer {
 								$debugData = $this->prepareDataSample($data);
 								t3lib_div::devLog('Data received (sample)', $this->extKey, -1, $debugData);
 							}
-							$this->handleData($data);
+							$this->handleData($data, $connector);
 						}
 							// Call connector's post-processing with a rough error status
 						$errorStatus = FALSE;
@@ -325,7 +325,7 @@ class tx_externalimport_importer {
 	 * @param	mixed		$rawData: data in the format provided by the external source (XML string, PHP array, etc.)
 	 * @return	void
 	 */
-	protected function handleData($rawData) {
+	protected function handleData($rawData, &$connector = '') {
 
 			// Prepare the data, depending on result type
 		switch ($this->externalConfig['data']) {
@@ -333,7 +333,8 @@ class tx_externalimport_importer {
 				$records = $this->handleXML($rawData);
 				break;
 			case 'array':
-				$records = $this->handleArray($rawData);
+				if (function_exists($connector->handleArray)) $records = $connector->handleArray($rawData);
+				else $records = $this->handleArray($rawData);
 				break;
 			default:
 				$records = $rawData;
