@@ -1,5 +1,7 @@
-This is a variant of the external_import extension by Francois Suter that is necessary for the use of the svconnector_social extension.
+=external_import=
+==socialVariant branch==
+''This version of external_import must be used with svconnector_social''
 
-This version will work fine with all the other svconnector plugins, it just provides a hook that allows the use of an alternate handleArray function.
+This is a variant of the [http://forge.typo3.org/projects/show/extension-external_import external_import extension] by [http://forge.typo3.org/users/329 Francois Suter]. This version will work fine with all the other svconnector plugins, it just provides a hook that allows the use of an alternate handleArray function.
 
 You MUST use this version ("socialVariant" branch) if you wish to use the svconnector_social extension!
