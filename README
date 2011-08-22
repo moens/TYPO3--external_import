@@ -1,0 +1,5 @@
+This is a variant of the external_import extension by Francois Suter that is necessary for the use of the svconnector_social extension.
+
+This version will work fine with all the other svconnector plugins, it just provides a hook that allows the use of an alternate handleArray function.
+
+You MUST use this version ("socialVariant" branch) if you wish to use the svconnector_social extension!
