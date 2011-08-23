@@ -333,7 +333,9 @@ class tx_externalimport_importer {
 				$records = $this->handleXML($rawData);
 				break;
 			case 'array':
-				if (method_exists($connector, 'handleArray')) $records = $connector->handleArray($rawData);
+				if (method_exists($connector, 'handleArray')) {
+					$records = $connector->handleArray($rawData, $this->tableTCA, $this->index, $this->externalConfig, $this->numAdditionalFields, $this->additionalFields);
+				}
 				else $records = $this->handleArray($rawData);
 				break;
 			default:
